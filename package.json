@@ -31,6 +31,6 @@
     "glob": "^4.0.5"
   },
   "dependencies": {
-    "xlsx": "^0.7.10"
+    "ember-cli-sheetjs": "0.0.5"
   }
 }
