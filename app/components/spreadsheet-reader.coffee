@@ -51,13 +51,20 @@ SpreadsheetReaderComponent = Ember.Component.extend {
     {
       date:         moment(row['date'].w, 'MM/DD/YYYY HH:mm')
       coupon:       row['coupon'].w
-      fuel:         row['fuel']
-      qty:          row['qty']
-      unitValue:    row['unitValue']
-      totalValue:   row['totalValue']
-      licensePlate: row['licensePlate']
-      km:           row['km']
+      fuel:         @parseFuel(row['fuel'].v)
+      qty:          row['qty'].v
+      unitValue:    row['unitValue'].v
+      totalValue:   row['totalValue'].v
+      licensePlate: row['licensePlate'].v.replace(' ', '').replace('-', '')
+      km:           row['km'].v
     }
+
+  parseFuel: (fuelText)->
+    if fuelText.match(/DIESEL/i)
+      return "A" if fuelText.match(/COMUM|500/i)
+      return "S" if fuelText.match(/10/)
+    else if fuelText.match(/GAS/i)
+      return "B"
 
   updateSupplies: (->
     @set 'supplies', @parseSheet()
