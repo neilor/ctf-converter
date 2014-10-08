@@ -37,10 +37,10 @@ SpreadsheetReaderComponent = Ember.Component.extend {
 
     # iterate on sheet rows skipping header [0]
     if rowsCount > 0
-      for row in [1..rowsCount]
+      for row in [2..rowsCount+1]
         do (row)->
           # parse each row and add to supplies
-          supplies[row] = self.parseRow(row)
+          supplies[row-2] = self.parseRow(row)
 
     supplies
 
