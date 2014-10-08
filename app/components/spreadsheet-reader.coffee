@@ -3,8 +3,14 @@
 
 SpreadsheetReaderComponent = Ember.Component.extend {
   classNames: ['drag-n-drop']
+  classNameBindings: ['hasSupplies']
   workbook: null
   supplies: null
+
+  hasSupplies: (->
+    supplies = @get('supplies')
+    !!supplies && supplies.length > 0
+  ).property('supplies')
 
   sheet: (->
     workbook = @get('workbook')
@@ -66,10 +72,6 @@ SpreadsheetReaderComponent = Ember.Component.extend {
     else if fuelText.match(/GAS/i)
       return "B"
 
-  updateSupplies: (->
-    @set 'supplies', @parseSheet()
-  ).property('sheet', 'rowsCount')
-
   dragOver: (ev) ->
     ev.preventDefault()
 
@@ -86,6 +88,14 @@ SpreadsheetReaderComponent = Ember.Component.extend {
       # console.log self # XLSX.read(f.target.result, type: 'binary')
 
     reader.readAsBinaryString(file)
+
+
+  actions:
+    readReport: ->
+      if !!@get('workbook')
+        @set 'supplies', @parseSheet()
+      else
+        alert 'Drop an report before'
 }
 
 `export default SpreadsheetReaderComponent`

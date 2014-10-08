@@ -8,3 +8,6 @@ html, body {
   border: 3px dashed gray;
   text-align: center;
 }
+ .drag-n-drop.has-supplies {
+   border-color: green;
+ }
