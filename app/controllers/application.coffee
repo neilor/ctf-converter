@@ -18,7 +18,7 @@ ApplicationController = Ember.Controller.extend
       do(supply)->
         lines.push
         lines.push sprintf(
-          "%1$-9s\t%1$-12s\t%2$-9s\t%2$-9s\t%2$-5s\t%2$-5s\t%2$-5s\t%2$-5s\t%2$-5s\t%2$-5s\t%3$1s\t%2$-4s\t%4$7s\t%5$-20s\t%6$-7s\t%7$-10s\t%8$-9s\t%8$-9s\t%9$-14s\t%10$-20s\t%11$-10s\t%11$-10s\t%12$-15s\t%2$-9s\t%7$-10s\t%13$1s\t%2$-17s\t%5$-18s\t%5$-40s\t%14$-20s\t%10$-25s\t%10$-25s",
+          "%1$-9s\t%1$-12s\t%2$-9s\t%2$-5s\t%2$-5s\t%2$-5s\t%2$-5s\t%2$-5s\t%3$1s\t%2$-4s\t%4$7s\t%5$-20s\t%6$-7s\t%7$-10s\t%8$-9s\t%8$-9s\t%9$-14s\t%10$-20s\t%11$-10s\t%11$-10s\t%12$-15s\t%2$-9s\t%7$-10s\t%13$1s\t%2$-17s\t%5$-18s\t%5$-40s\t%14$-20s\t%10$-25s\t%10$-25s",
           supply.coupon,
           '1',
           supply.fuel,
