@@ -1,3 +1,13 @@
 html, body {
   margin: 20px;
 }
+
+.drag-n-drop {
+  margin: 20px;
+  background-color: #F1F1F1;
+  border: 3px dashed gray;
+  text-align: center;
+}
+ .drag-n-drop.has-supplies {
+   border-color: green;
+ }
