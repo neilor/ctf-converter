@@ -55,7 +55,7 @@ SpreadsheetReaderComponent = Ember.Component.extend {
     row = @row(rowNum)
 
     {
-      date:         moment(row['date'].w, 'MM/DD/YYYY HH:mm')
+      date:         moment(row['date'].w, 'MM/DD/YY HH:mm')
       coupon:       row['coupon'].w
       fuel:         @parseFuel(row['fuel'].v)
       qty:          row['qty'].v
