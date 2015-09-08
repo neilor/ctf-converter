@@ -1,14 +1,16 @@
 <h2 id='title'>CTF Conversor</h2>
+
 <hr />
 
-<h3>Step #1:</h3>
+<h3>Passo #1:</h3>
 {{spreadsheet-reader supplies=supplies}}
 
-<h3>Step #2:</h3>
-<p>Type the CNPJ(without numbers): {{input value=cnpj size='11' maxlength='11' width='50px'}}</p>
-<p>Supplier name: {{input value=supplier width='150px'}}</p>
+<h3>Passo #2:</h3>
+<p>Razão Social: {{input value=supplier width='250px'}}</p>
+<p>CNPJ: <small>(apenas números)</small> {{input value=cnpj size='15' maxlength='15' width='150px'}}</p>
 
-<h3>Step #3:</h3>
-<a target='_blank' {{bind-attr href=reportURL}}>Download report</a>
+<h3>Passo #3:</h3>
+<p>Clique com o botão direito abaixo e vá em "Salvar link como..."":</p>
+<a target='_blank' {{bind-attr href=reportURL}}>Download TXT</a>
 
 {{outlet}}
