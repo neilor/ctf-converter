@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "ttruck-times"
+  },
+  "targets": {
+    "ttruck-times": {
+      "hosting": {
+        "ttruck-ctfl": [
+          "ttruck-ctfl"
+        ]
+      }
+    }
+  }
+}
